@@ -1,0 +1,30 @@
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*~
+
+# Microsoft Access lock files
+*.laccdb
+
+# MySQL temp
+*.tmp
+*.bak
+
+# Python (if you add Python helpers later)
+__pycache__/
+*.pyc
+.venv/
+
+# Local environment
+.env
+*.local
+
+# Large data files - keep CSVs in /data/ but skip generated dumps
+*.dump
+*.sql.gz

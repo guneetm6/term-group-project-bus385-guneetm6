@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 780" font-family="Arial, sans-serif">
+  <text x="550" y="30" text-anchor="middle" font-size="22" font-weight="bold" fill="#1e3a8a">Non-Profit Donor and Campaign Management - Entity Relationship Diagram</text>
+  <text x="550" y="52" text-anchor="middle" font-size="13" fill="#475569">BUS 385 - Spring 2026 - Guneet Malhotra, Junior Noel, Donovan Jarvis</text>
+
+  <rect x="40" y="280" width="220" height="220" rx="6" fill="#ffffff" stroke="#1e40af" stroke-width="2"/>
+  <rect x="40" y="280" width="220" height="32" rx="6" fill="#1e40af"/>
+  <text x="150" y="301" text-anchor="middle" fill="white" font-size="14" font-weight="bold">CONSTITUENTS</text>
+  <text x="50" y="328" font-size="11" fill="#0f172a"><tspan font-weight="bold">PK</tspan> constituent_id (INT)</text>
+  <text x="50" y="346" font-size="11" fill="#0f172a">first_name (VARCHAR 50)</text>
+  <text x="50" y="362" font-size="11" fill="#0f172a">last_name (VARCHAR 50)</text>
+  <text x="50" y="378" font-size="11" fill="#0f172a">email (VARCHAR 100)</text>
+  <text x="50" y="394" font-size="11" fill="#0f172a">phone (VARCHAR 20)</text>
+  <text x="50" y="410" font-size="11" fill="#0f172a">address (VARCHAR 150)</text>
+  <text x="50" y="426" font-size="11" fill="#0f172a">city (VARCHAR 50)</text>
+  <text x="50" y="442" font-size="11" fill="#0f172a">state (CHAR 2)</text>
+  <text x="50" y="458" font-size="11" fill="#0f172a">donor_type (VARCHAR 50)</text>
+  <text x="50" y="474" font-size="11" fill="#0f172a">created_date (DATE)</text>
+
+  <rect x="840" y="280" width="220" height="180" rx="6" fill="#ffffff" stroke="#1e40af" stroke-width="2"/>
+  <rect x="840" y="280" width="220" height="32" rx="6" fill="#1e40af"/>
+  <text x="950" y="301" text-anchor="middle" fill="white" font-size="14" font-weight="bold">CAMPAIGNS</text>
+  <text x="850" y="328" font-size="11" fill="#0f172a"><tspan font-weight="bold">PK</tspan> campaign_id (INT)</text>
+  <text x="850" y="346" font-size="11" fill="#0f172a">name (VARCHAR 100)</text>
+  <text x="850" y="362" font-size="11" fill="#0f172a">type (VARCHAR 50)</text>
+  <text x="850" y="378" font-size="11" fill="#0f172a">goal_amount (DECIMAL 12,2)</text>
+  <text x="850" y="394" font-size="11" fill="#0f172a">start_date (DATE)</text>
+  <text x="850" y="410" font-size="11" fill="#0f172a">end_date (DATE)</text>
+  <text x="850" y="426" font-size="11" fill="#0f172a">description (VARCHAR 255)</text>
+
+  <rect x="430" y="80" width="240" height="160" rx="6" fill="#fef3c7" stroke="#b45309" stroke-width="2"/>
+  <rect x="430" y="80" width="240" height="32" rx="6" fill="#b45309"/>
+  <text x="550" y="101" text-anchor="middle" fill="white" font-size="14" font-weight="bold">TRANSACTIONS</text>
+  <text x="440" y="128" font-size="11" fill="#0f172a"><tspan font-weight="bold">PK</tspan> transaction_id (INT)</text>
+  <text x="440" y="146" font-size="11" fill="#0f172a"><tspan font-weight="bold">FK</tspan> constituent_id (INT)</text>
+  <text x="440" y="162" font-size="11" fill="#0f172a"><tspan font-weight="bold">FK</tspan> campaign_id (INT)</text>
+  <text x="440" y="180" font-size="11" fill="#0f172a">donation_amount (DECIMAL)</text>
+  <text x="440" y="196" font-size="11" fill="#0f172a">donation_date (DATE)</text>
+  <text x="440" y="212" font-size="11" fill="#0f172a">payment_method (VARCHAR 50)</text>
+
+  <rect x="430" y="540" width="240" height="170" rx="6" fill="#fef3c7" stroke="#b45309" stroke-width="2"/>
+  <rect x="430" y="540" width="240" height="32" rx="6" fill="#b45309"/>
+  <text x="550" y="561" text-anchor="middle" fill="white" font-size="14" font-weight="bold">PLEDGES</text>
+  <text x="440" y="588" font-size="11" fill="#0f172a"><tspan font-weight="bold">PK</tspan> pledge_id (INT)</text>
+  <text x="440" y="606" font-size="11" fill="#0f172a"><tspan font-weight="bold">FK</tspan> constituent_id (INT)</text>
+  <text x="440" y="622" font-size="11" fill="#0f172a"><tspan font-weight="bold">FK</tspan> campaign_id (INT)</text>
+  <text x="440" y="638" font-size="11" fill="#0f172a">pledge_amount (DECIMAL)</text>
+  <text x="440" y="654" font-size="11" fill="#0f172a">pledge_date (DATE)</text>
+  <text x="440" y="670" font-size="11" fill="#0f172a">due_date (DATE)</text>
+  <text x="440" y="686" font-size="11" fill="#0f172a">pledge_status (VARCHAR 50)</text>
+
+  <rect x="40" y="540" width="240" height="170" rx="6" fill="#dcfce7" stroke="#15803d" stroke-width="2"/>
+  <rect x="40" y="540" width="240" height="32" rx="6" fill="#15803d"/>
+  <text x="160" y="561" text-anchor="middle" fill="white" font-size="14" font-weight="bold">PLEDGE_PAYMENTS</text>
+  <text x="50" y="588" font-size="11" fill="#0f172a"><tspan font-weight="bold">PK</tspan> payment_id (INT)</text>
+  <text x="50" y="606" font-size="11" fill="#0f172a"><tspan font-weight="bold">FK</tspan> pledge_id (INT)</text>
+  <text x="50" y="622" font-size="11" fill="#0f172a"><tspan font-weight="bold">FK</tspan> constituent_id (INT)</text>
+  <text x="50" y="638" font-size="11" fill="#0f172a">payment_amount (DECIMAL)</text>
+  <text x="50" y="654" font-size="11" fill="#0f172a">payment_date (DATE)</text>
+  <text x="50" y="670" font-size="11" fill="#0f172a">outstanding_balance</text>
+
+  <rect x="40" y="80" width="240" height="160" rx="6" fill="#ede9fe" stroke="#6d28d9" stroke-width="2"/>
+  <rect x="40" y="80" width="240" height="32" rx="6" fill="#6d28d9"/>
+  <text x="160" y="101" text-anchor="middle" fill="white" font-size="14" font-weight="bold">DONOR_METRICS</text>
+  <text x="50" y="128" font-size="11" fill="#0f172a"><tspan font-weight="bold">PK</tspan> metric_id (INT)</text>
+  <text x="50" y="146" font-size="11" fill="#0f172a"><tspan font-weight="bold">FK</tspan> constituent_id (UNIQUE)</text>
+  <text x="50" y="162" font-size="11" fill="#0f172a">lifetime_giving (DECIMAL)</text>
+  <text x="50" y="178" font-size="11" fill="#0f172a">average_gift / largest_gift</text>
+  <text x="50" y="194" font-size="11" fill="#0f172a">donor_level (VARCHAR 50)</text>
+  <text x="50" y="210" font-size="11" fill="#0f172a">retention_status (VARCHAR 50)</text>
+  <text x="50" y="226" font-size="11" fill="#0f172a">giving_2021 ... giving_2025</text>
+
+  <line x1="260" y1="320" x2="430" y2="160" stroke="#1e40af" stroke-width="2"/>
+  <text x="280" y="225" font-size="11" fill="#1e3a8a" font-weight="bold">1 - M (places)</text>
+
+  <line x1="840" y1="320" x2="670" y2="160" stroke="#1e40af" stroke-width="2"/>
+  <text x="700" y="225" font-size="11" fill="#1e3a8a" font-weight="bold">M - 1 (receives)</text>
+
+  <line x1="260" y1="460" x2="430" y2="610" stroke="#1e40af" stroke-width="2"/>
+  <text x="270" y="555" font-size="11" fill="#1e3a8a" font-weight="bold">1 - M (commits)</text>
+
+  <line x1="840" y1="430" x2="670" y2="610" stroke="#1e40af" stroke-width="2"/>
+  <text x="720" y="555" font-size="11" fill="#1e3a8a" font-weight="bold">M - 1 (targets)</text>
+
+  <line x1="430" y1="625" x2="280" y2="625" stroke="#1e40af" stroke-width="2"/>
+  <text x="295" y="615" font-size="11" fill="#1e3a8a" font-weight="bold">1 - M (paid by)</text>
+
+  <line x1="160" y1="500" x2="160" y2="540" stroke="#1e40af" stroke-width="2"/>
+  <text x="170" y="525" font-size="11" fill="#1e3a8a" font-weight="bold">1 - M</text>
+
+  <line x1="160" y1="280" x2="160" y2="240" stroke="#6d28d9" stroke-width="2.5" stroke-dasharray="4,3"/>
+  <text x="175" y="262" font-size="11" fill="#6d28d9" font-weight="bold">1 - 1</text>
+
+  <rect x="720" y="540" width="340" height="170" rx="6" fill="#f8fafc" stroke="#94a3b8" stroke-width="1"/>
+  <text x="730" y="562" font-size="13" font-weight="bold" fill="#0f172a">Legend</text>
+  <rect x="730" y="572" width="20" height="14" fill="#ffffff" stroke="#1e40af" stroke-width="2"/>
+  <text x="758" y="584" font-size="11" fill="#334155">Master entity (Constituents, Campaigns)</text>
+  <rect x="730" y="592" width="20" height="14" fill="#fef3c7" stroke="#b45309" stroke-width="2"/>
+  <text x="758" y="604" font-size="11" fill="#334155">Bridge entity (Transactions, Pledges)</text>
+  <rect x="730" y="612" width="20" height="14" fill="#dcfce7" stroke="#15803d" stroke-width="2"/>
+  <text x="758" y="624" font-size="11" fill="#334155">Detail entity (Pledge_Payments)</text>
+  <rect x="730" y="632" width="20" height="14" fill="#ede9fe" stroke="#6d28d9" stroke-width="2"/>
+  <text x="758" y="644" font-size="11" fill="#334155">Analytical entity (Donor_Metrics)</text>
+  <text x="730" y="668" font-size="11" font-weight="bold" fill="#0f172a">PK</text>
+  <text x="760" y="668" font-size="11" fill="#334155">Primary Key</text>
+  <text x="730" y="686" font-size="11" font-weight="bold" fill="#0f172a">FK</text>
+  <text x="760" y="686" font-size="11" fill="#334155">Foreign Key</text>
+  <text x="730" y="704" font-size="10" fill="#475569">1-M = one-to-many, 1-1 = one-to-one</text>
+</svg>
